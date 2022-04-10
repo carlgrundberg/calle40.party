@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
-import { StatsModal } from './components/modals/StatsModal'
+// import { StatsModal } from './components/modals/StatsModal'
 import { SettingsModal } from './components/modals/SettingsModal'
 import {
   WIN_MESSAGES,
-  GAME_COPIED_MESSAGE,
+  // GAME_COPIED_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
   WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
@@ -16,7 +16,7 @@ import {
   MAX_WORD_LENGTH,
   MAX_CHALLENGES,
   REVEAL_TIME_MS,
-  GAME_LOST_INFO_DELAY,
+  // GAME_LOST_INFO_DELAY,
   WELCOME_INFO_MODAL_MS,
 } from './constants/settings'
 import {
@@ -50,7 +50,7 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
-  const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
+  // const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
@@ -150,15 +150,15 @@ function App() {
 
       showSuccessAlert(winMessage, {
         delayMs,
-        onClose: () => setIsStatsModalOpen(true),
+        // onClose: () => setIsStatsModalOpen(true),
       })
     }
 
-    if (isGameLost) {
-      setTimeout(() => {
-        setIsStatsModalOpen(true)
-      }, GAME_LOST_INFO_DELAY)
-    }
+    // if (isGameLost) {
+    //   setTimeout(() => {
+    //     setIsStatsModalOpen(true)
+    //   }, GAME_LOST_INFO_DELAY)
+    // }
   }, [isGameWon, isGameLost, showSuccessAlert])
 
   const onChar = (value: string) => {
@@ -244,7 +244,7 @@ function App() {
     <div className="h-screen flex flex-col">
       <Navbar
         setIsInfoModalOpen={setIsInfoModalOpen}
-        setIsStatsModalOpen={setIsStatsModalOpen}
+        // setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
       />
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
@@ -267,7 +267,7 @@ function App() {
           isOpen={isInfoModalOpen}
           handleClose={() => setIsInfoModalOpen(false)}
         />
-        <StatsModal
+        {/* <StatsModal
           isOpen={isStatsModalOpen}
           handleClose={() => setIsStatsModalOpen(false)}
           guesses={guesses}
@@ -279,7 +279,7 @@ function App() {
           isDarkMode={isDarkMode}
           isHighContrastMode={isHighContrastMode}
           numberOfGuessesMade={guesses.length}
-        />
+        /> */}
         <SettingsModal
           isOpen={isSettingsModalOpen}
           handleClose={() => setIsSettingsModalOpen(false)}

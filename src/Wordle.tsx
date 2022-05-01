@@ -16,7 +16,7 @@ import {
   MAX_CHALLENGES,
   REVEAL_TIME_MS,
   // GAME_LOST_INFO_DELAY,
-  WELCOME_INFO_MODAL_MS,
+  // WELCOME_INFO_MODAL_MS,
 } from './constants/settings'
 import {
   // isWordInWordList,
@@ -26,10 +26,9 @@ import {
   unicodeLength,
 } from './lib/words'
 // import { addStatsForCompletedGame, loadStats } from './lib/stats'
-import {
-  loadGameStateFromLocalStorage,
-  saveGameStateToLocalStorage,
-} from './lib/localStorage'
+import // loadGameStateFromLocalStorage,
+// saveGameStateToLocalStorage,
+'./lib/localStorage'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 
 import { AlertContainer } from './components/alerts/AlertContainer'
@@ -51,23 +50,24 @@ function Wordle({ solution, onSuccess }: Props) {
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isRevealing, setIsRevealing] = useState(false)
-  const [guesses, setGuesses] = useState<string[]>(() => {
-    const loaded = loadGameStateFromLocalStorage()
-    if (loaded?.solution !== solution) {
-      return []
-    }
-    const gameWasWon = loaded.guesses.includes(solution)
-    if (gameWasWon) {
-      setIsGameWon(true)
-    }
-    if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
-      setIsGameLost(true)
-      // showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-      //   persist: true,
-      // })
-    }
-    return loaded.guesses
-  })
+  const [guesses, setGuesses] = useState<string[]>([])
+  // const [guesses, setGuesses] = useState<string[]>(() => {
+  //   const loaded = loadGameStateFromLocalStorage()
+  //   if (loaded?.solution !== solution) {
+  //     return []
+  //   }
+  //   const gameWasWon = loaded.guesses.includes(solution)
+  //   if (gameWasWon) {
+  //     setIsGameWon(true)
+  //   }
+  //   if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
+  //     setIsGameLost(true)
+  //     // showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+  //     //   persist: true,
+  //     // })
+  //   }
+  //   return loaded.guesses
+  // })
 
   // const [stats, setStats] = useState(() => loadStats())
 
@@ -77,15 +77,15 @@ function Wordle({ solution, onSuccess }: Props) {
   //     : false
   // )
 
-  useEffect(() => {
-    // if no game state on load,
-    // show the user the how-to info modal
-    if (!loadGameStateFromLocalStorage()) {
-      setTimeout(() => {
-        setIsInfoModalOpen(true)
-      }, WELCOME_INFO_MODAL_MS)
-    }
-  }, [])
+  // useEffect(() => {
+  //   // if no game state on load,
+  //   // show the user the how-to info modal
+  //   if (!loadGameStateFromLocalStorage()) {
+  //     setTimeout(() => {
+  //       setIsInfoModalOpen(true)
+  //     }, WELCOME_INFO_MODAL_MS)
+  //   }
+  // }, [])
 
   // useEffect(() => {
   //   if (isDarkMode) {
@@ -125,9 +125,10 @@ function Wordle({ solution, onSuccess }: Props) {
     setCurrentGuess('')
   }
 
-  useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution })
-  }, [guesses])
+  useEffect(reset, [solution])
+  // useEffect(() => {
+  //   saveGameStateToLocalStorage({ guesses, solution })
+  // }, [guesses, solution])
 
   // useEffect(() => {
   //   if (isGameWon) {
@@ -213,12 +214,18 @@ function Wordle({ solution, onSuccess }: Props) {
 
       if (winningWord) {
         // setStats(addStatsForCompletedGame(stats, guesses.length))
-        return setIsGameWon(true)
+        setTimeout(() => {
+          setIsGameWon(true)
+        }, REVEAL_TIME_MS * solution.length)
+        return
       }
 
       if (guesses.length === MAX_CHALLENGES - 1) {
         // setStats(addStatsForCompletedGame(stats, guesses.length + 1))
-        setIsGameLost(true)
+        setTimeout(() => {
+          setIsGameLost(true)
+        }, REVEAL_TIME_MS * solution.length)
+
         // showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
         //   persist: true,
         //   delayMs: REVEAL_TIME_MS * solution.length + 1,

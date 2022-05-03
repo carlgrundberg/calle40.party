@@ -197,7 +197,7 @@ const steps = [
 ]
 
 function App() {
-  const [step, setStep] = useState(5)
+  const [step, setStep] = useState(0)
   const { title, content, solution, images, imagesSolution, next } = steps[step]
 
   const nextStep = () => {

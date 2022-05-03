@@ -33,6 +33,7 @@ import { default as GraphemeSplitter } from 'grapheme-splitter'
 
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
+import { InformationCircleIcon } from '@heroicons/react/outline'
 // import { getGuessStatuses } from './lib/statuses'
 
 type Props = {
@@ -236,14 +237,18 @@ function Wordle({ solution, onSuccess }: Props) {
 
   return (
     <>
-      <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
-        <div className="pb-6 grow flex flex-col justify-center">
+      <div className="pt-2 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
+        <div className="pb-6 grow flex flex-col">
           <Grid
             guesses={guesses}
             currentGuess={currentGuess}
             isRevealing={isRevealing}
             currentRowClassName={currentRowClass}
             solution={solution}
+          />
+          <InformationCircleIcon
+            className="h-6 w-6 cursor-pointer dark:stroke-white absolute top-4 right-4"
+            onClick={() => setIsInfoModalOpen(true)}
           />
         </div>
         {!isGameLost && !isGameWon && (

@@ -27,7 +27,7 @@ import Wordle from './Wordle'
 
 const steps = [
   {
-    title: 'Calle 40',
+    title: 'Calle 40!',
     content: (
       <>
         <p className="my-2">
@@ -56,7 +56,7 @@ const steps = [
     title: 'Utmaning 2',
     content: (
       <p className="my-2">
-        Festen kommer hållas den 30 juli, men kan du lista ur var?
+        Festen kommer hållas den 30 juli, men kan du lista ut var?
       </p>
     ),
     solution: 'VITTSJÖ',
@@ -90,15 +90,114 @@ const steps = [
     imagesSolution: [0, 2, 3, 8],
   },
   {
-    title: 'Grattis, du är välkommen på festen!',
+    title: 'Grattis, du är välkommen på festen den 30 juli!',
     content: (
-      <p className="my-2">Fyll i informationen nedan för att anmäla dig.</p>
+      <>
+        <p className="my-2">
+          Fyll i formuläret nedan för att anmäla dig. Mer information kommer när
+          det närmar sig.
+        </p>
+        <form
+          className="w-full max-w-lg"
+          data-netlify="true"
+          method="POST"
+          name="register"
+        >
+          <label className="block mt-2">
+            <span>Namn</span>
+            <input
+              name="Namn"
+              type="text"
+              className="
+              mt-1
+              block
+              w-full
+              rounded-md
+              text-gray-700
+              border-gray-300
+              shadow-sm
+              focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+            "
+              placeholder=""
+              autoComplete="name"
+            />
+          </label>
+          <label className="block mt-2">
+            <span>Email</span>
+            <input
+              name="Email"
+              type="email"
+              className="
+              mt-1
+              block
+              w-full
+              rounded-md
+              text-gray-700
+              border-gray-300
+              shadow-sm
+              focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+            "
+              placeholder=""
+              autoComplete="email"
+            />
+          </label>
+          <label className="block mt-2">
+            <span>Telefon</span>
+            <input
+              name="Telefon"
+              type="tel"
+              className="
+              mt-1
+              block
+              w-full
+              rounded-md
+              text-gray-700
+              border-gray-300
+              shadow-sm
+              focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+            "
+              placeholder=""
+              autoComplete="tel"
+            />
+          </label>
+          <label className="block mt-2">
+            <span>Antal (ta med familjen)</span>
+            <input
+              name="Antal"
+              type="number"
+              min={1}
+              max={10}
+              className="
+              mt-1
+              block
+              w-full
+              rounded-md
+              text-gray-700
+              border-gray-300
+              shadow-sm
+              focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+            "
+              defaultValue={1}
+            />
+          </label>
+          <button
+            className="mt-4 py-2 px-4 bg-indigo-600 rounded"
+            type="submit"
+          >
+            Skicka
+          </button>
+        </form>
+      </>
     ),
+  },
+  {
+    title: 'Tack för din anmälan',
+    content: <p className="my-2">Vi ses på festen den 30 juli!</p>,
   },
 ]
 
 function App() {
-  const [step, setStep] = useState(4)
+  const [step, setStep] = useState(5)
   const { title, content, solution, images, imagesSolution, next } = steps[step]
 
   const nextStep = () => {
@@ -106,7 +205,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
+    <div className="h-screen flex flex-col justify-center items-center p-4">
       <h1 className="m-4 text-4xl">{title}</h1>
       {content}
       {solution && <Wordle solution={solution} onSuccess={nextStep} />}

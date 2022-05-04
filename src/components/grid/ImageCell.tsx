@@ -18,7 +18,7 @@ export const ImageCell = ({
   }
 
   const classes = classnames(
-    'w-32 h-32 border-solid border-2 rounded bg-cover bg-center border-black dark:border-slate-100 cursor-pointer',
+    'w-24 md:w-32 h-24 md:h-32 border-solid border-2 rounded bg-cover bg-center border-black dark:border-slate-100 cursor-pointer',
     {
       'opacity-30': isSelected,
     }

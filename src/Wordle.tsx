@@ -265,7 +265,7 @@ function Wordle({ solution, onSuccess }: Props) {
           <div className="mx-auto max-w-sm text-center">
             <p>Grattis du klarade det!</p>
             <button
-              className="mt-4 py-2 px-4 bg-indigo-600 rounded"
+              className="mt-4 mb-8 py-2 px-4 bg-indigo-600 rounded"
               onClick={onSuccess}
             >
               Gå vidare
@@ -276,7 +276,7 @@ function Wordle({ solution, onSuccess }: Props) {
           <div className="mx-auto max-w-sm text-center">
             <p>Tyvärr klarade du inte utmaningen.</p>
             <button
-              className="mt-4 py-2 px-4 bg-indigo-600 rounded"
+              className="mt-4 mb-8 py-2 px-4 bg-indigo-600 rounded"
               onClick={reset}
             >
               Prova igen

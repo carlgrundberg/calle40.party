@@ -39,6 +39,12 @@ function Input({
   )
 }
 
+function encode(data: { [key: string]: string }) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 type RegisterProps = {
   onSuccess: () => void
 }
@@ -46,11 +52,13 @@ type RegisterProps = {
 function Register({ onSuccess }: RegisterProps) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const formData = new FormData(e.currentTarget)
-    formData.append(`form-name`, `register`)
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: formData,
+      body: encode({
+        'form-name': 'register',
+        ...Object.fromEntries(formData),
+      }),
     })
       .then(onSuccess)
       .catch((error) => alert(error))

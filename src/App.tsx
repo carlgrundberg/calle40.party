@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { ImageGrid } from './components/grid/ImageGrid'
 import Register from './Register'
 import Wordle from './Wordle'
 
 function App() {
-  const [step, setStep] = useState(5)
+  const [step, setStep] = useState(0)
 
   const nextStep = () => {
     setStep(step + 1)
   }
+
+  useEffect(() => console.log('Ja det är lätt att fuska! :)'), [])
 
   const steps = [
     {

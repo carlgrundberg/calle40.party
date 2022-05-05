@@ -5,7 +5,7 @@ import Register from './Register'
 import Wordle from './Wordle'
 
 function App() {
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(5)
 
   const nextStep = () => {
     setStep(step + 1)
@@ -16,6 +16,11 @@ function App() {
       title: 'Calle 40!',
       content: (
         <>
+          <img
+            src="/android-chrome-192x192.png"
+            alt="Öl"
+            className="w-32 h-32 my-2"
+          />
           <p className="my-2">
             Jasså du har hört att jag fyller 40, och nu vill du gå på kalas?
           </p>

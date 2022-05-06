@@ -5,7 +5,7 @@ import Register from './Register'
 import Wordle from './Wordle'
 
 function App() {
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(5)
 
   const nextStep = () => {
     setStep(step + 1)
@@ -27,8 +27,8 @@ function App() {
             Jasså du har hört att jag fyller 40, och nu vill du gå på kalas?
           </p>
           <p className="my-2">
-            Ja! Det blir ett kalas men för att få komma så måste du klara ett
-            par utmaningar så jag vet att du verkligen vill.
+            Ja, det blir ett kalas! Ta reda på när, var och hur genom att klara
+            testet.
           </p>
         </>
       ),
@@ -95,7 +95,7 @@ function App() {
   const { title, content, solution, images, imagesSolution, next } = steps[step]
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center p-4">
+    <div className="absolute inset-0 flex flex-col justify-center items-center p-4">
       <h1 className="m-4 text-4xl text-center">{title}</h1>
       {content}
       {solution && <Wordle solution={solution} onSuccess={nextStep} />}

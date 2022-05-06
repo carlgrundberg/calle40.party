@@ -69,8 +69,8 @@ function Register({ onSuccess }: RegisterProps) {
   return (
     <>
       <p className="my-2">
-        Fyll i formuläret nedan för att anmäla dig. Mer information kommer när
-        det närmar sig.
+        Fyll i formuläret nedan senast den 1 juli för att anmäla dig. Mer
+        information kommer när det närmar sig.
       </p>
       <form
         className="w-full max-w-lg"

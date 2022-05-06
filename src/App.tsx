@@ -5,7 +5,7 @@ import Register from './Register'
 import Wordle from './Wordle'
 
 function App() {
-  const [step, setStep] = useState(5)
+  const [step, setStep] = useState(0)
 
   const nextStep = () => {
     setStep(step + 1)

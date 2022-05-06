@@ -10,7 +10,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="Spelregler" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Gissa ordet på på sex försökt. Efter varje gissning så kommer färgerna visa hur nära du är rätt ord.
+        Gissa ordet på på fyra försök. Efter varje gissning så kommer färgerna visa hur nära du är rätt ord.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -26,7 +26,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Bokstaven är rätt C och är på rätt plats.
+        Bokstaven C är rätt och är på rätt plats.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">

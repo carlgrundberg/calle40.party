@@ -32,9 +32,8 @@
         gtag('config', '%REACT_APP_GOOGLE_MEASUREMENT_ID%');
       </script>
     <% } %>
-    <% if (process.env.NODE_ENV === 'production' && process.env.REACT_APP_PLAUSIBLE_DOMAIN != null) { %>
-      <!-- Plausible Analytics -->
-      <script defer data-domain="%REACT_APP_PLAUSIBLE_DOMAIN%" src="https://plausible.io/js/plausible.js"></script>
+    <% if (process.env.NODE_ENV === 'production') { %>
+      <script async defer data-website-id="30d88cb8-3148-4909-a929-c68eb91b8459" src="https://u.calle40.party/umami.js"></script>
     <% } %>
   </head>
   <body>

@@ -5,11 +5,17 @@ import Register from './Register'
 import Wordle from './Wordle'
 
 function App() {
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(
+    Number.parseInt(localStorage.getItem('step') || '0', 10) || 0
+  )
 
   const nextStep = () => {
     setStep(step + 1)
   }
+
+  useEffect(() => {
+    localStorage.setItem('step', step.toString())
+  }, [step])
 
   useEffect(() => console.log('Ja det är lätt att fuska! :)'), [])
 

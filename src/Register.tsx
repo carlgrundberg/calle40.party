@@ -69,6 +69,46 @@ function Register({ onSuccess }: RegisterProps) {
   return (
     <>
       <p className="my-2">
+        Vi ses hemma i vår trädgård på Snapphanevägen 29 i Vittsjö, där vi äter
+        och dricker gott. Kom när ni vill från kl 16:00, hela familjen är
+        välkomna!
+      </p>
+      <p className="my-2">
+        Jag uppskattar lokalt producerade ätbara produkter och drycker, men i
+        övrigt så önskar jag att ni skänker en slant till{' '}
+        <a
+          className="underline"
+          href="https://www.radiohjalpen.se/"
+          target="_blank"
+        >
+          Radiohjälpen
+        </a>
+        .
+      </p>
+      <p className="my-2">
+        Vill ni sova över finns värdshuset{' '}
+        <a className="underline" href="https://furuliden.se/" target="_blank">
+          Furuliden
+        </a>
+        ,{' '}
+        <a
+          className="underline"
+          href="https://www.vittsjocamping.se/"
+          target="_blank"
+        >
+          Vittsjö Camping
+        </a>{' '}
+        och{' '}
+        <a
+          className="underline"
+          href="https://www.wittsjogk.se/"
+          target="_blank"
+        >
+          Wittsjö Golfklubb
+        </a>{' '}
+        som alternativ.
+      </p>
+      <p className="my-2">
         Fyll i formuläret nedan senast den 1 juli för att anmäla dig. Mer
         information kommer när det närmar sig.
       </p>
@@ -82,12 +122,7 @@ function Register({ onSuccess }: RegisterProps) {
         <Input name="Namn" label="Namn" type="text" autoComplete="name" />
         <Input name="Email" label="Email" type="email" autoComplete="email" />
         <Input name="Telefon" label="Telefon" type="tel" autoComplete="tel" />
-        <Input
-          name="Antal"
-          label="Antal (ta med familjen)"
-          type="number"
-          defaultValue="1"
-        />
+        <Input name="Antal" label="Antal" type="number" defaultValue="1" />
 
         <button className="mt-4 py-2 px-4 bg-indigo-600 rounded" type="submit">
           Skicka

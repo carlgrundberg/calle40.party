@@ -88,7 +88,12 @@ function Register({ onSuccess }: RegisterProps) {
       </p>
       <p className="my-2">
         Vill ni sova över finns värdshuset{' '}
-        <a className="underline" href="https://furuliden.se/" target="_blank">
+        <a
+          className="underline"
+          href="https://furuliden.se/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Furuliden
         </a>
         ,{' '}

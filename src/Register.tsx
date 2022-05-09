@@ -80,6 +80,7 @@ function Register({ onSuccess }: RegisterProps) {
           className="underline"
           href="https://www.radiohjalpen.se/"
           target="_blank"
+          rel="noreferrer"
         >
           Radiohjälpen
         </a>
@@ -95,6 +96,7 @@ function Register({ onSuccess }: RegisterProps) {
           className="underline"
           href="https://www.vittsjocamping.se/"
           target="_blank"
+          rel="noreferrer"
         >
           Vittsjö Camping
         </a>{' '}
@@ -103,6 +105,7 @@ function Register({ onSuccess }: RegisterProps) {
           className="underline"
           href="https://www.wittsjogk.se/"
           target="_blank"
+          rel="noreferrer"
         >
           Wittsjö Golfklubb
         </a>{' '}

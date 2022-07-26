@@ -9,6 +9,7 @@ type Props = {
   isRevealing?: boolean
   isCompleted?: boolean
   position?: number
+  onClick?: () => void
 }
 
 export const Cell = ({
@@ -17,6 +18,7 @@ export const Cell = ({
   isRevealing,
   isCompleted,
   position = 0,
+  onClick,
 }: Props) => {
   const isFilled = value && !isCompleted
   const shouldReveal = isRevealing && isCompleted
@@ -45,7 +47,7 @@ export const Cell = ({
   )
 
   return (
-    <div className={classes} style={{ animationDelay }}>
+    <div className={classes} style={{ animationDelay }} onClick={onClick}>
       <div className="letter-container" style={{ animationDelay }}>
         {value}
       </div>

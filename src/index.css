@@ -189,3 +189,8 @@ svg.cursor-pointer:hover {
     transform: translate(0, 0);
   }
 }
+
+html.dark {
+  background-color: rgb(15, 23, 42);
+  @apply text-white;
+}

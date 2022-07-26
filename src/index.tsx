@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
+import WordHunt from './WordHunt'
 import reportWebVitals from './reportWebVitals'
 import { AlertProvider } from './context/AlertContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <AlertProvider>
-      <App />
+      <WordHunt />
     </AlertProvider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import { ImageGrid } from './components/grid/ImageGrid'
 import Register from './Register'
 import Wordle from './Wordle'
 
-function App() {
+function Invitation() {
   const [step, setStep] = useState(
     Number.parseInt(localStorage.getItem('step') || '0', 10) || 0
   )
@@ -124,4 +123,4 @@ function App() {
   )
 }
 
-export default App
+export default Invitation

@@ -87,38 +87,9 @@ function Register({ onSuccess }: RegisterProps) {
         .
       </p>
       <p className="my-2">
-        Vill ni sova över finns värdshuset{' '}
-        <a
-          className="underline"
-          href="https://furuliden.se/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Furuliden
-        </a>
-        ,{' '}
-        <a
-          className="underline"
-          href="https://www.vittsjocamping.se/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Vittsjö Camping
-        </a>{' '}
-        och{' '}
-        <a
-          className="underline"
-          href="https://www.wittsjogk.se/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Wittsjö Golfklubb
-        </a>{' '}
-        som alternativ.
-      </p>
-      <p className="my-2">
-        Fyll i formuläret nedan senast den 1 juli för att anmäla dig. Mer
-        information kommer när det närmar sig.
+        Fyll i formuläret nedan senast den 1 juli för att anmäla dig. Kan du
+        inte komma så ange 0 som antal. Mer information kommer när det närmar
+        sig.
       </p>
       <form
         className="w-full max-w-lg"

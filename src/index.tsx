@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import WordHunt from './WordHunt'
 import reportWebVitals from './reportWebVitals'
-import { AlertProvider } from './context/AlertContext'
+// import { AlertProvider } from './context/AlertContext'
+import Invitation from './Invitation'
 
 ReactDOM.render(
   <React.StrictMode>
-    <AlertProvider>
-      <WordHunt />
-    </AlertProvider>
+    {/* <AlertProvider> */}
+    <Invitation />
+    {/* </AlertProvider> */}
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -20,7 +20,7 @@ function Invitation() {
 
   const steps = [
     {
-      title: 'Magnus 40!',
+      title: 'Välkommen på 40-årsfest!',
       content: (
         <>
           <img
@@ -29,11 +29,10 @@ function Invitation() {
             className="w-32 h-32 my-2"
           />
           <p className="my-2">
-            Jasså du har hört att jag fyller 40, och nu vill du gå på kalas?
+            Den 17 december är du/ni välkommen på 40-års fest på
+            Victoriaesplanaden 3E i Örnsköldsvik.
           </p>
-          <p className="my-2">
-            Ja, det blir ett kalas, klicka på knappen för anmälan!
-          </p>
+          <p className="my-2">Klicka på knappen för att anmäla er.</p>
         </>
       ),
       next: 'Anmälan',
@@ -87,7 +86,7 @@ function Invitation() {
     //   imagesSolution: [0, 2, 3, 8],
     // },
     {
-      title: 'Du är välkommen på festen den 17 december!',
+      title: 'Anmälan',
       content: <Register onSuccess={nextStep} />,
     },
     {

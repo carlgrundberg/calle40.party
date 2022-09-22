@@ -68,28 +68,23 @@ function Register({ onSuccess }: RegisterProps) {
 
   return (
     <>
+      <h2 className="text-xl">Klädsel</h2>
       <p className="my-2">
-        Vi ses hemma i vår trädgård på Snapphanevägen 29 i Vittsjö, där vi äter
-        och dricker gott. Kom när ni vill från kl 16:00, hela familjen är
-        välkomna!
+        Jag skulle vilja återuppleva tiden för 40 år sedan vilket resulterar i
+        att klädseln är givetvis något från 80-talet! (Valfri tolkning).
+      </p>
+      <p className="my-2">Mat och dryck serveras under kvällen!</p>
+      <p className="my-2 text-xl">17 December kl. 18.00</p>
+      <p className="my-2">
+        Jag önskar mig inget i present men vill man ändå ge något kan man bidra
+        med valfritt belopp till festkassan.
       </p>
       <p className="my-2">
-        Jag uppskattar lokalt producerade ätbara produkter och drycker, men i
-        övrigt så önskar jag att ni skänker en slant till{' '}
-        <a
-          className="underline"
-          href="https://www.radiohjalpen.se/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Radiohjälpen
-        </a>
-        .
+        Vi ser fram emot en barnfri kväll, hoppas ni gör det samma 🥳
       </p>
       <p className="my-2">
-        Fyll i formuläret nedan senast den 1 juli för att anmäla dig. Kan du
-        inte komma så ange 0 som antal. Mer information kommer när det närmar
-        sig.
+        Fyll i formuläret nedan senast 30 oktober för att anmäla dig. Kan du/ni
+        inte komma så ange 0 som antal.
       </p>
       <form
         className="w-full max-w-lg"

@@ -12,6 +12,10 @@ function Invitation() {
     setStep(step + 1)
   }
 
+  const prevStep = () => {
+    setStep(step - 1)
+  }
+
   useEffect(() => {
     localStorage.setItem('step', step.toString())
   }, [step])
@@ -98,7 +102,7 @@ function Invitation() {
   const { title, content, next } = steps[step]
 
   return (
-    <div className="absolute inset-0 flex flex-col justify-center items-center p-4">
+    <div className="flex flex-col justify-center items-center p-4">
       <h1 className="m-4 text-4xl text-center">{title}</h1>
       {content}
       {/* {solution && <Wordle solution={solution} onSuccess={nextStep} />} */}
@@ -115,6 +119,14 @@ function Invitation() {
           onClick={nextStep}
         >
           {next}
+        </button>
+      )}
+      {step > 0 && (
+        <button
+          className="mt-4 py-2 px-4 bg-indigo-600 rounded"
+          onClick={prevStep}
+        >
+          Tillbaka
         </button>
       )}
     </div>

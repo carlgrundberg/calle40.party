@@ -20,7 +20,7 @@ function Invitation() {
     localStorage.setItem('step', step.toString())
   }, [step])
 
-  useEffect(() => console.log('Ja det är lätt att fuska! :)'), [])
+  // useEffect(() => console.log('Ja det är lätt att fuska! :)'), [])
 
   const steps = [
     {
